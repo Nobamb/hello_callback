@@ -18,3 +18,10 @@ const multiple = (a,b)=> {
     return a * b
 
 }
+
+// 두 변수에 대해 나누는 함수를 생성한다.
+const divide = (a,b)=>{
+
+    return a / b
+
+}
