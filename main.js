@@ -38,3 +38,18 @@ const divide = (a,b)=>{
 // 만약에 first, second, third, fourth 모두 함수일 때 그대로 실행
 // 하나라도 함수가 아니면 오류 발생
 
+
+const callbackTest = (first, second, third, fourth, value1, value2) => {
+
+    // 만약에 first, second, third, fourth 모두 function이면
+    if(typeof(first) === "function" && typeof(second) === "function"&& typeof(third) === "function"&& typeof(fourth) === "function"){
+        // 테스트
+        console.log("모두 함수입니다")
+
+    }
+
+}
+
+
+// 임의로 함수 실행
+callbackTest(plus, minus, multiple, divide,1,2)
