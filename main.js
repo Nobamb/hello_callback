@@ -5,3 +5,9 @@ const plus = (a,b) => {
 
 }
 
+// 두 변수에 대해 빼는 함수를 생성한다.
+const minus = (a,b) => {
+
+    return a - b
+
+}
