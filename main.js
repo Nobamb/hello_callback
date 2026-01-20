@@ -72,9 +72,17 @@ const callbackTest = (first, second, third, fourth, value1, value2) => {
     }
 
 
+    // 모두 함수가 아니라면 
+    else{
+
+        console.error("모두 함수가 아닙니다.")
+
+    }
+
+
 
 }
 
 
 // 임의로 함수 실행
-callbackTest(plus, minus, multiple, divide,1,2)
+callbackTest(plus, minus, multiple, 1,1,2)
