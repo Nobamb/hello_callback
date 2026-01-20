@@ -11,3 +11,10 @@ const minus = (a,b) => {
     return a - b
 
 }
+
+// 두 변수에 대해 곱하는 함수를 생성한다.
+const multiple = (a,b)=> {
+
+    return a * b
+
+}
