@@ -47,26 +47,26 @@ const callbackTest = (first, second, third, fourth, value1, value2) => {
         // console.log("모두 함수입니다")
 
         // first 먼저 실행
-        const first = first(value1, value2)
+        const firstValue = first(value1, value2)
 
         // second 다음에 실행
 
-        const second = second(value1, value2)
+        const secondValue = second(value1, value2)
 
         // third 다음에 실행
 
-        const third = third(value1, value2)
+        const thirdValue = third(value1, value2)
 
 
         // fourth 마지막 실행
-        const fourth = fourth(value1, value2)
+        const fourthValue = fourth(value1, value2)
 
 
         // 출력
-        console.log(`첫번째 함수 값 ${first}`)
-        console.log(`두번째 함수 값 ${second}`)
-        console.log(`세번째 함수 값 ${third}`)
-        console.log(`네번째 함수 값 ${fourth}`)
+        console.log(`첫번째 함수 값 ${firstValue}`)
+        console.log(`두번째 함수 값 ${secondValue}`)
+        console.log(`세번째 함수 값 ${thirdValue}`)
+        console.log(`네번째 함수 값 ${fourthValue}`)
 
 
     }
@@ -85,4 +85,12 @@ const callbackTest = (first, second, third, fourth, value1, value2) => {
 
 
 // 임의로 함수 실행
-callbackTest(plus, minus, multiple, 1,1,2)
+
+// 더하기 빼기 곱하기 나누기 순
+callbackTest(plus, minus, multiple, divide,30,2)
+
+// 빼기 더하기 곱하기 나누기 순
+callbackTest(minus, plus,multiple, divide,70, 7)
+
+// 곱하기 빼기 나누기 더하기 순
+callbackTest(multiple, minus, divide,plus,70, 7)
