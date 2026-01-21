@@ -1,8 +1,8 @@
 // 더하기 빼기 곱하기 나누기 함수 import
-import plus from "./func/plus";
-import minus from "./func/minus";
-import multiple from "./func/multiple";
-import divide from "./func/divide";
+import plus from "./func/plus.js";
+import minus from "./func/minus.js";
+import multiple from "./func/multiple.js";
+import divide from "./func/divide.js";
 
 // 콜백함수 비동기 처리
 // 4가지 함수들 파라미터로 넣고
@@ -12,7 +12,7 @@ import divide from "./func/divide";
 const parallel = (allFunc, initData, allData) => {
   // 참 거짓 판별
   // 기본값 false
-  funcBoolean = false;
+  let funcBoolean = false;
 
   // 만약에 배열이면
   if (typeof allFunc === "object") {
@@ -28,7 +28,7 @@ const parallel = (allFunc, initData, allData) => {
   // 만약에 배열이 아니면
   // allFunc가 함수인지 확인
   else {
-    //
+    // 만약에 allFunc가 함수라면
     if (typeof allFunc === "funcion") {
       // 테스트
       funcBoolean = true;
@@ -50,17 +50,14 @@ const parallel = (allFunc, initData, allData) => {
 
 // parallel 함수 실행 테스트(함수를 잘 읽는지)
 // 단일 함수
-test1 = parallel(plus,1,1)
+const test1 = parallel(plus,1,1)
 // 여러 함수
-test2 = parallel([plus,minus],1,1)
+const test2 = parallel([plus,minus],1,1)
 // 단일 값
-test3 = parallel(1,1,1)
+const test3 = parallel(1,1,1)
 // 여러 함수,값
-test4 = parallel([plus,1],1,1)
+const test4 = parallel([plus,1],1,1)
 
 // test1~4 출력
-print(test1)
-print(test2)
-print(test3)
-print(test4)
-
+console.log(test1)
+console.log(test2)
