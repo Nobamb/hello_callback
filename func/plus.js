@@ -1,7 +1,10 @@
 // 플러스 함수 생성
-const plus = (value1, value2) => {
+const plus = (value1, value2, func) => {
 
-    return value1 + value2
+const result = value1 + value2
+
+    // 콜백 함수 실행
+    func(result)
 
 }
 // export 
