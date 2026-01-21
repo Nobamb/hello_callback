@@ -19,7 +19,7 @@ const parallel = (allFunc, initData, allData) => {
     // allfunc를 나눔
     allFunc.forEach((element) => {
       // 만약에 모두 함수일 때
-      if (typeof element === "funcion") {
+      if (typeof element === "function") {
         // 테스트
         funcBoolean = true;
       }
@@ -29,7 +29,7 @@ const parallel = (allFunc, initData, allData) => {
   // allFunc가 함수인지 확인
   else {
     // 만약에 allFunc가 함수라면
-    if (typeof allFunc === "funcion") {
+    if (typeof allFunc === "function") {
       // 테스트
       funcBoolean = true;
     }
@@ -47,17 +47,16 @@ const parallel = (allFunc, initData, allData) => {
   }
 };
 
-
 // parallel 함수 실행 테스트(함수를 잘 읽는지)
 // 단일 함수
-const test1 = parallel(plus,1,1)
+const test1 = parallel(plus, 1, 1);
 // 여러 함수
-const test2 = parallel([plus,minus],1,1)
+const test2 = parallel([plus, minus], 1, 1);
 // 단일 값
-const test3 = parallel(1,1,1)
+const test3 = parallel(1, 1, 1);
 // 여러 함수,값
-const test4 = parallel([plus,1],1,1)
+const test4 = parallel([plus, 1], 1, 1);
 
 // test1~4 출력
-console.log(test1)
-console.log(test2)
+console.log(test1);
+console.log(test2);
