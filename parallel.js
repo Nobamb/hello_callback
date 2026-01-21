@@ -35,10 +35,29 @@ const parallel = (allFunc, initData, allData) => {
     }
   }
 
+  // 초기값
+  let initValue = initData;
+
   // 만약 모두 함수면
   if (funcBoolean) {
-    console.log("모두 함수입니다.");
-    return;
+    // 만약 allData가 object형식이면
+    if (typeof allData === "object") {
+      // allFunc를 분해
+      // element, index
+      allFunc.forEach((element, index) => {
+        // 초기값에 함수대입하여(다른 값) 지정
+        // allData에 index지정
+        initValue = element(initValue, allData[index]);
+      });
+    }
+    // object가 아니면
+    else {
+      // 초기값에 함수대입하여(다른 값) 지정
+      initValue = allFunc(initValue, allData);
+    }
+
+    // initValue 반환
+    return initValue;
   }
   //  모두 함수가 아니라면
   else {
@@ -47,16 +66,10 @@ const parallel = (allFunc, initData, allData) => {
   }
 };
 
-// parallel 함수 실행 테스트(함수를 잘 읽는지)
-// 단일 함수
-const test1 = parallel(plus, 1, 1);
-// 여러 함수
-const test2 = parallel([plus, minus], 1, 1);
-// 단일 값
-const test3 = parallel(1, 1, 1);
-// 여러 함수,값
-const test4 = parallel([plus, 1], 1, 1);
+// 테스트2
+const test1 = parallel([minus, multiple, plus],10,[4,20,1]);
+const test2 = parallel(plus,1,100);
 
-// test1~4 출력
-console.log(test1);
-console.log(test2);
+// 출력
+console.log(test1)
+console.log(test2)
